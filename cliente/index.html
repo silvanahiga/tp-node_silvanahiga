@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>tpnode</title>
+</head>
+
+<body>
+  <!-- modal -->
+  <div id="modal" style="display:none">
+    <div  class="modal-style">
+      
+      <div id="modal-header">
+        <button id="close">X</button>
+        <h4>Add Employee</h4>
+        
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Apellido</label>
+            <input type="text" class="form-control" id="recipient-lastname">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email</label>
+            <input type="text" class="form-control" id="recipient-email">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Phone</label>
+            <input type="text" class="form-control" id="recipient-phone">
+          </div>
+         
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-guardar btn-secondary" data-dismiss="modal">Guardar</button>
+            <button type="button" class="btn btn-primary">Guardar Cambios</button>
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- <a href="#openModal">Lanzar el modal</a> -->
+
+  <!-- <div id="openModal" class="modalDialog">
+    <div>
+      <a href="#close" title="Close" class="close">X</a>
+      <h2>Add Employee</h2>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Address</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Phone</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <p>Este es un ejemplo de modal, creado gracias al poder de CSS3.</p>
+      <p>Puedes hacer un montón de cosas aquí, como alertas o incluso crear un formulario de registro aquí mismo.</p> 
+    </div>
+  </div> -->
+
+  <!-- header -->
+  <div class=" card principal m-5 ml-7" >
+    <div class="card-header"
+      style="background: #324c6e; display: flex; align-items: center; justify-content: space-between">Manage Employees
+      <button type="button" class="btn-add btn-secondary btn-lg float-right"
+        style="font-size: 15px; background:#3bc472; display: flex; align-items: center"><i
+          class="material-icons mr-1 mb-2" style="background:#3bc472">&#xE147;</i>Add New Employee</button>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+
+
+        <!-- filtro -->
+        <div class="input-group input-group-sm mb-3 col-4 p-0 float-right">
+          <div class="input-group-prepend">
+
+          </div>
+          <input type="text" class="form-control" placeholder="Filter" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-sm">
+        </div>
+
+
+        <!-- tabla de datos -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                </div>
+              </th>
+              <th scope="col">Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="datos">
+
+            <!-- <tr > -->
+            <!-- <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>1112222</td>
+              <td>
+                <i class="material-icons" style='color:yellow' title="Edit">&#xE254;</i>
+                <i class="material-icons"  style='color:red' title="Delete">&#xE872;</i>
+              </td> -->
+            <!-- </tr> -->
+
+            <!-- <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>1112222</td>
+              <td>
+                <i class="material-icons" style='color:yellow'  title="Edit">&#xE254;</i>
+                <i class="material-icons"  style='color:red'  title="Delete">&#xE872;</i>
+              </td>
+
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>1112222</td>
+              <td>
+                <i class="material-icons" style='color:yellow'  title="Edit">&#xE254;</i>
+                <i class="material-icons"  style='color:red'  title="Delete">&#xE872;</i>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+
+
+      </blockquote>
+    </div>
+  </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
